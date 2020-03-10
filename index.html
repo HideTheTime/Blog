@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-TypeScript/3-2使用SuperAgent和类型定义文件获取页面内容" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/09/TypeScript/3-2%E4%BD%BF%E7%94%A8SuperAgent%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9/" class="article-date">
+  <time datetime="2020-03-09T12:36:52.990Z" itemprop="datePublished">2020-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/09/TypeScript/3-2%E4%BD%BF%E7%94%A8SuperAgent%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9/">TypeScript/3-2使用SuperAgent和类型定义文件获取页面内容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<ul>
+<li><h3 id="npm网站查询-这个是npm网站"><a href="#npm网站查询-这个是npm网站" class="headerlink" title="npm网站查询 这个是npm网站"></a>npm网站查询 <a href="https://www.npmjs.com/" target="_blank" rel="noopener">这个是npm网站</a></h3></li>
+<li><h3 id="supergent-模块的引入"><a href="#supergent-模块的引入" class="headerlink" title="supergent 模块的引入"></a>supergent 模块的引入</h3><ul>
+<li><h4 id="这里引入的方式是局部引入"><a href="#这里引入的方式是局部引入" class="headerlink" title="这里引入的方式是局部引入"></a>这里引入的方式是局部引入</h4><ul>
+<li><h5 id="代码是npm-install-–save-superagent"><a href="#代码是npm-install-–save-superagent" class="headerlink" title="代码是npm install –save superagent"></a>代码是npm install –save superagent</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><img src="C:%5CUsers%5C%E6%A2%A6%E7%A5%9E%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200309123436136.png" alt="image-20200309123436136"></p>
+<blockquote>
+<h3 id="Type-superagent模块"><a href="#Type-superagent模块" class="headerlink" title="- @Type/superagent模块"></a>- @Type/superagent模块</h3><ul>
+<li>npm i -save @type/superagent<ul>
+<li>原理:<strong>TS直接引用js文件,是不行的*</strong></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="引入superagent模块"><a href="#引入superagent模块" class="headerlink" title="引入superagent模块"></a>引入superagent模块</h3><blockquote>
+<p><code>*import* superagent *from* &quot;superagent&quot;;</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TS直接引用js文件,是不行的</span></span><br><span class="line"><span class="comment">// te -&gt; .d.ts 翻译文件 -&gt; js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> superagent <span class="keyword">from</span> <span class="string">"superagent"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello ~ ts"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Crowller &#123;</span><br><span class="line">  <span class="keyword">private</span> secret = <span class="string">"secretKey"</span>;</span><br><span class="line">  <span class="keyword">private</span> url = <span class="string">`http://www.dell-lee.com/Typescript/demo.html?secret=<span class="subst">$&#123;<span class="keyword">this</span>.secret&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">private</span> rawHtml = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// console.log("constructor:构造器");</span></span><br><span class="line">  <span class="comment">// 构造器</span></span><br><span class="line">  <span class="keyword">async</span> getRawHtml() &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> superagent.get(<span class="keyword">this</span>.url);</span><br><span class="line">    <span class="keyword">this</span>.rawHtml = result.text;</span><br><span class="line">    <span class="built_in">console</span>.log(result.text);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.getRawHtml();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> crowller = <span class="keyword">new</span> Crowller();</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p> 这其中把全局ts-node删除了, 然后局部安装了tsnode ,具体用意也不太清楚 . </p>
+<p>总之安装局部ts-node之后, 初始化了文件夹 <strong><code>npm init -y</code></strong></p>
+<ul>
+<li>多了个<strong><code>package.json</code></strong>,<ul>
+<li>又初始化 TS <ul>
+<li>多了个<strong><code>tsconfig.json</code></strong>??</li>
+</ul>
+</li>
+<li>初始化TS命令 <strong><code>tsc --init</code></strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>然后在里面配置启动命令</li>
+<li><strong><code>&quot;dev&quot;: &quot;ts-node ./crowller.ts&quot;</code></strong></li>
+<li></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/09/TypeScript/3-2%E4%BD%BF%E7%94%A8SuperAgent%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9/" data-id="ck7kidn3a00030gdmg2q57wxt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-学习链接及进度" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/09/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5%E5%8F%8A%E8%BF%9B%E5%BA%A6/" class="article-date">
+  <time datetime="2020-03-09T12:30:59.250Z" itemprop="datePublished">2020-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/09/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5%E5%8F%8A%E8%BF%9B%E5%BA%A6/">学习链接及进度</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><blockquote>
+<ul>
+<li><h3 id="千峰教育-Vue-教程"><a href="#千峰教育-Vue-教程" class="headerlink" title="千峰教育 Vue 教程"></a><a href="https://www.bilibili.com/video/av82071887?p=56" target="_blank" rel="noopener">千峰教育 Vue 教程</a></h3></li>
+<li><h3 id="老陈打码-Vue-教程"><a href="#老陈打码-Vue-教程" class="headerlink" title="老陈打码 Vue 教程"></a><a href="https://www.bilibili.com/video/av88732281?p=18" target="_blank" rel="noopener">老陈打码 Vue 教程</a></h3></li>
+<li><h3 id="手把手撸-Vue-前端项目"><a href="#手把手撸-Vue-前端项目" class="headerlink" title="手把手撸 Vue 前端项目"></a><a href="https://www.bilibili.com/video/av68675306" target="_blank" rel="noopener">手把手撸 Vue 前端项目</a></h3></li>
+<li><h3 id="2019-年-11-月-Vue-教程"><a href="#2019-年-11-月-Vue-教程" class="headerlink" title="2019 年 11 月 Vue 教程"></a><a href="https://www.bilibili.com/video/av92033315?from=search&seid=12631326169475772712" target="_blank" rel="noopener">2019 年 11 月 Vue 教程</a></h3></li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<h1 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h1><blockquote>
+<ul>
+<li><h3 id="慕课-TypeScript-教程"><a href="#慕课-TypeScript-教程" class="headerlink" title="慕课 TypeScript 教程"></a><a href="https://coding.imooc.com/learn/list/412.html" target="_blank" rel="noopener">慕课 TypeScript 教程</a></h3></li>
+<li><h3 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h3></li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<h1 id="blog-博客"><a href="#blog-博客" class="headerlink" title="blog 博客"></a>blog 博客</h1><ul>
+<li><h3 id="Hexo-博客搭建"><a href="#Hexo-博客搭建" class="headerlink" title="Hexo 博客搭建"></a><a href="https://www.bilibili.com/video/av85251102?from=search&seid=9401103342882202315" target="_blank" rel="noopener">Hexo 博客搭建</a></h3></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>-</p>
+</blockquote>
+<blockquote>
+<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><ul>
+<li><h3 id="SpringBoot-狂神教程"><a href="#SpringBoot-狂神教程" class="headerlink" title="SpringBoot 狂神教程"></a><a href="https://www.bilibili.com/video/av75233634?p=4" target="_blank" rel="noopener">SpringBoot 狂神教程</a></h3></li>
+<li></li>
+</ul>
+</blockquote>
+<blockquote>
+<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><ul>
+<li><h3 id="l-老陈打码-Node-教程"><a href="#l-老陈打码-Node-教程" class="headerlink" title="l 老陈打码 Node 教程"></a><a href="https://www.bilibili.com/video/av88369894" target="_blank" rel="noopener">l 老陈打码 Node 教程</a></h3></li>
+</ul>
+<p>-</p>
+</blockquote>
+<blockquote>
+<h1 id="混合-APP-开发"><a href="#混合-APP-开发" class="headerlink" title="混合 APP 开发"></a>混合 APP 开发</h1><ul>
+<li><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><a href=""></a></h3></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/09/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5%E5%8F%8A%E8%BF%9B%E5%BA%A6/" data-id="ck7kidn2500010gdm60m89czq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hello" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/09/Hello/" class="article-date">
+  <time datetime="2020-03-09T12:21:53.000Z" itemprop="datePublished">2020-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/09/Hello/">学习链接和进度</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><blockquote>
+<ul>
+<li><h3 id="千峰教育-Vue-教程"><a href="#千峰教育-Vue-教程" class="headerlink" title="千峰教育 Vue 教程"></a><a href="https://www.bilibili.com/video/av82071887?p=56" target="_blank" rel="noopener">千峰教育 Vue 教程</a></h3></li>
+<li><h3 id="老陈打码-Vue-教程"><a href="#老陈打码-Vue-教程" class="headerlink" title="老陈打码 Vue 教程"></a><a href="https://www.bilibili.com/video/av88732281?p=18" target="_blank" rel="noopener">老陈打码 Vue 教程</a></h3></li>
+<li><h3 id="手把手撸-Vue-前端项目"><a href="#手把手撸-Vue-前端项目" class="headerlink" title="手把手撸 Vue 前端项目"></a><a href="https://www.bilibili.com/video/av68675306" target="_blank" rel="noopener">手把手撸 Vue 前端项目</a></h3></li>
+<li><h3 id="2019-年-11-月-Vue-教程"><a href="#2019-年-11-月-Vue-教程" class="headerlink" title="2019 年 11 月 Vue 教程"></a><a href="https://www.bilibili.com/video/av92033315?from=search&seid=12631326169475772712" target="_blank" rel="noopener">2019 年 11 月 Vue 教程</a></h3></li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<h1 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h1><blockquote>
+<ul>
+<li><h3 id="慕课-TypeScript-教程"><a href="#慕课-TypeScript-教程" class="headerlink" title="慕课 TypeScript 教程"></a><a href="https://coding.imooc.com/learn/list/412.html" target="_blank" rel="noopener">慕课 TypeScript 教程</a></h3></li>
+<li><h3 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h3></li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<h1 id="blog-博客"><a href="#blog-博客" class="headerlink" title="blog 博客"></a>blog 博客</h1><ul>
+<li><h3 id="Hexo-博客搭建"><a href="#Hexo-博客搭建" class="headerlink" title="Hexo 博客搭建"></a><a href="https://www.bilibili.com/video/av85251102?from=search&seid=9401103342882202315" target="_blank" rel="noopener">Hexo 博客搭建</a></h3></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>-</p>
+</blockquote>
+<blockquote>
+<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><ul>
+<li><h3 id="SpringBoot-狂神教程"><a href="#SpringBoot-狂神教程" class="headerlink" title="SpringBoot 狂神教程"></a><a href="https://www.bilibili.com/video/av75233634?p=4" target="_blank" rel="noopener">SpringBoot 狂神教程</a></h3></li>
+<li></li>
+</ul>
+</blockquote>
+<blockquote>
+<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><ul>
+<li><h3 id="l-老陈打码-Node-教程"><a href="#l-老陈打码-Node-教程" class="headerlink" title="l 老陈打码 Node 教程"></a><a href="https://www.bilibili.com/video/av88369894" target="_blank" rel="noopener">l 老陈打码 Node 教程</a></h3></li>
+</ul>
+<p>-</p>
+</blockquote>
+<blockquote>
+<h1 id="混合-APP-开发"><a href="#混合-APP-开发" class="headerlink" title="混合 APP 开发"></a>混合 APP 开发</h1><ul>
+<li><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><a href=""></a></h3></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/09/Hello/" data-id="ck7kidn0t00000gdm7kst7hz1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/09/hello-world/" class="article-date">
+  <time datetime="2020-03-09T12:03:03.020Z" itemprop="datePublished">2020-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/09/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/09/hello-world/" data-id="ck7kidn2q00020gdm6ey5buaq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/09/TypeScript/3-2%E4%BD%BF%E7%94%A8SuperAgent%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9/">TypeScript/3-2使用SuperAgent和类型定义文件获取页面内容</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/09/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5%E5%8F%8A%E8%BF%9B%E5%BA%A6/">学习链接及进度</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/09/Hello/">学习链接和进度</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/09/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
